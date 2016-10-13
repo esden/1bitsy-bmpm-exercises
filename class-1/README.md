@@ -40,6 +40,8 @@ int main(void)
         while (1) {
                 asm("nop");
         }
+
+        return 0;
 }
 ```
 
@@ -73,8 +75,8 @@ so that if your program becomes too large it can let you know.
 To compile the example code execute the following command:
 ```
 arm-none-eabi-gcc -g3 -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 \
-  --specs=rdimon.specs -nostartfiles -Llibopencm3/lib -lopencm3_stm32f4 \
-  -Wl,-T,1bitsy.ld excersize-1.c -o excersize-1.elf
+  --specs=rdimon.specs -nostartfiles -Llibopencm3/lib \
+  -Wl,-T,1bitsy.ld excersize-1.c -lopencm3_stm32f4 -o excersize-1.elf
 ```
 
 To load and debug the program connect your Black Magic Probe to the computer
