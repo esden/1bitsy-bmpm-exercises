@@ -1,11 +1,23 @@
-## Follow the instructions here to learn the basics of using Black Magic Probe and GDB.
+# Class 1 - First Steps
 
-Clone libopencm3 first, to somewhere convenient.
+Follow the instructions here to learn the basics of using Black Magic Probe and GDB.
+
+Note: We assume you already have
+[gcc-arm-embedded](https://launchpad.net/gcc-arm-embedded) and some form of a
+[GIT](https://git-scm.com/) client installed on your computer.
+
+## How it all works.
+
+We are starting with setting up our environment and uploading our first small
+program. Follow the following few steps:
+
+Clone [libopencm3](https://github.com/libopencm3/libopencm3) into a convenient
+location.
 ```
 git clone https://github.com/libopencm3/libopencm3.git
 ```
 
-And compile the needed STM32F4 hardware library:
+Compile the needed STM32F4 hardware library:
 ```
 cd libopencm3
 make lib TARGETS=stm32/f4 # this will limit the compilation to only the one library type we need
@@ -33,6 +45,17 @@ int main(void)
 }
 ```
 
+Note: Here is an assorted, short list, of a few selected text editors that you
+can use. All of them have C syntax highlighting capability making code writing
+easy:
+* [gedit](https://wiki.gnome.org/Apps/Gedit)
+* [Notepad++](https://notepad-plus-plus.org/)
+* [Sublime Text](https://www.sublimetext.com/)
+* [Atom](https://atom.io/)
+* [Vim](http://www.vim.org/)
+* [Emacs](https://www.gnu.org/software/emacs/)
+* [Nano](https://www.nano-editor.org/)
+
 Create a linker script file `1bitsy.ld` for the 1Bitsy dev platform:
 ```
 /* Define memory regions. */
@@ -46,6 +69,9 @@ MEMORY
 INCLUDE libopencm3_stm32f4.ld
 ```
 
+Note: this linker script tells the GCC linker how many resources there are
+so that if your program becomes too large it can let you know.
+
 To compile the example code execute the following command:
 ```
 arm-none-eabi-gcc -g3 -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 \
@@ -55,13 +81,17 @@ arm-none-eabi-gcc -g3 -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
 
 To load and debug the program connect your Black Magic Probe to the computer
 using a micro USB cable. And then connect the 1Bitsy to your Black Magic Probe
-using the gray ribbon cable.
+using the gray ribbon cable. Make sure you plugged in the ribbon cable the right
+way around into your 1Bitsy!
 
 Make sure the Black Magic Probe has been detected:
 ```
 lsusb
 dmesg
 ```
+
+Note: On Windows or Mac OS these commands don't exist, you have to use your
+"Hardware Manager" and "About This Mac -> System Report... -> USB" respectively.
 
 Start gdb:
 ```
@@ -102,8 +132,8 @@ Now you can load your newly compiled binary running the `load` GDB command.
 Starting the program using the `run` GDB command should result in the following
 output:
 ```
-(gdb) run
-Starting program: ${YOUR_WORK_PATH}/excersize-1
+run
+Starting program: ${YOUR_WORK_PATH}/excersize-1.elf
 The result is: 2
 ```
 
@@ -119,7 +149,7 @@ function. It will also restart the program if it is already running.
 * `exit` will quit GDB you can also do that by pressing the `<ctrl>-d` buttons
 on your keyboard.
 
-Excersizes:
+## Excersizes:
 
 1. Restart the program using the `start` command. Try to see how variables are
 being assigned and called using the `next` and `print <var>` GDB commands. If
