@@ -24,7 +24,7 @@ make lib TARGETS=stm32/f4 # this will limit the compilation to only the one libr
 cd ..
 ```
 
-Write an example program called `excersize-1.c` with your favorite text editor:
+Write an example program called `program-1.c` with your favorite text editor:
 ```
 #include <stdio.h>
 
@@ -101,7 +101,7 @@ Probe.
 
 Start gdb:
 ```
-arm-none-eabi-gdb excersize-1.elf
+arm-none-eabi-gdb program-1.elf
 ```
 
 Connect GDB to the Black Magic Probe:
@@ -139,7 +139,7 @@ Starting the program using the `run` GDB command should result in the following
 output:
 ```
 run
-Starting program: ${YOUR_WORK_PATH}/excersize-1.elf
+Starting program: ${YOUR_WORK_PATH}/program-1.elf
 The result is: 2
 ```
 
