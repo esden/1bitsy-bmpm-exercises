@@ -24,7 +24,7 @@ make lib TARGETS=stm32/f4 # this will limit the compilation to only the one libr
 cd ..
 ```
 
-Write an example program called excersize-1.c with your favorite text editor:
+Write an example program called `excersize-1.c` with your favorite text editor:
 ```
 #include <stdio.h>
 
@@ -92,6 +92,12 @@ dmesg
 
 Note: On Windows or Mac OS these commands don't exist, you have to use your
 "Hardware Manager" and "About This Mac -> System Report... -> USB" respectively.
+If you are on Windows you will need a
+[driver](http://www.blacksphere.co.nz/downloads/driver.w32.zip). The virtual
+serial port will be named `COMx` where `x` stands for a number under Windows.
+If you are on Mac OS the serial port device will be named
+`/dev/cu.usbmodemXXXXXX1` where `XXXXXX` is the serial number of the Black Magic
+Probe.
 
 Start gdb:
 ```
