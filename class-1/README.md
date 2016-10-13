@@ -19,9 +19,7 @@ git clone https://github.com/libopencm3/libopencm3.git
 
 Compile the needed STM32F4 hardware library:
 ```
-cd libopencm3
-make lib TARGETS=stm32/f4 # this will limit the compilation to only the one library type we need
-cd ..
+make -C libopencm3 lib TARGETS=stm32/f4 # this will limit the compilation to only the one library type we need
 ```
 
 Write an example program called `program-1.c` with your favorite text editor:
