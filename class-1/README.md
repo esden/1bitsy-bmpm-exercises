@@ -76,7 +76,7 @@ To compile the example code execute the following command:
 ```
 arm-none-eabi-gcc -g3 -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 \
   --specs=rdimon.specs -nostartfiles -Llibopencm3/lib \
-  -Wl,-T,1bitsy.ld excersize-1.c -lopencm3_stm32f4 -o excersize-1.elf
+  -Wl,-T,1bitsy.ld program-1.c -lopencm3_stm32f4 -o program-1.elf
 ```
 
 To load and debug the program connect your Black Magic Probe to the computer
