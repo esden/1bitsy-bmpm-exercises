@@ -146,7 +146,7 @@ The result is: 2
 You can interrupt and inspect the program by pressing `<ctrl>-c` on your
 keyboard.
 
-Here are a few very basic executuion control commands:
+Here are a few very basic execution control commands:
 * `run` will start or restart the program
 * `start` will set a temporary breakpoint at the beginning of the `main`
 function, then run the program and stop at the beginning of the `main`
@@ -155,7 +155,7 @@ function. It will also restart the program if it is already running.
 * `exit` will quit GDB you can also do that by pressing the `<ctrl>-d` buttons
 on your keyboard.
 
-## Excersizes:
+## Exercises:
 
 1. Restart the program using the `start` command. Try to see how variables are
 being assigned and called using the `next` and `print <var>` GDB commands. If
