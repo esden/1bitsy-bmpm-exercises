@@ -155,8 +155,8 @@ printf "blink extend condition %d\n", blink_count ^ 4
 end
 ```
 6. Try using all you learned so far to find out why the led blink delay
-extension triggers only once instead of every 4th cycles. After you finding
-the solution edit the program source code in a separate window without exiting
-GDB. If you did the optional step of creating the makefile you can run the
-`make` command from within GDB followed by `load` and `run` to see if your fix
-was successful.
+extension triggers only once instead of every 4th cycles. After finding the
+solution edit the program source code in a separate window without exiting GDB.
+If you did the optional step of creating the makefile you can run the `make`
+command from within GDB followed by `load` and `run` to see if your fix was
+successful.
