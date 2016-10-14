@@ -1,4 +1,4 @@
-# Class 2 - Hardware and Assembly
+# Class 2 - MMIO and Watchpoints
 
 Based on the previous class we will be expanding and instead of reproducing a
 native `printf` program we will be manipulating Memory Mapped Input and Output
@@ -19,7 +19,7 @@ cp ../class-1/1bitsy.ld .
 
 Now let us create a new program that blinks a led instead:
 ```
-include <libopencm3/stm32/rcc.h>
+#include <libopencm3/stm32/rcc.h>
 #include <libopencm3/stm32/gpio.h>
 
 void delay(int ticks)
